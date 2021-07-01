@@ -7,6 +7,7 @@ define([
 
     var connection = new Postmonger.Session();
     var payload = {};
+    var authTokens= {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
         { "label": "Create SMS Message", "key": "step1" }
@@ -80,7 +81,7 @@ define([
     function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log("Tokens function: "+JSON.stringify(tokens));
-        //authTokens = tokens;
+        authTokens = tokens;
     }
 
     function onGetEndpoints (endpoints) {
