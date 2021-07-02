@@ -6,8 +6,8 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
 //-----------------------------
-const SFClient = require('../utils/sfmc-client');//to save data in data extension
-const { v1: Uuidv1 } = require('uuid');   //for unique id
+//const SFClient = require('../utils/sfmc-client');//to save data in data extension
+//const { v1: Uuidv1 } = require('uuid');   //for unique id
 //----------------------------------------
 exports.logExecuteData = [];
 
