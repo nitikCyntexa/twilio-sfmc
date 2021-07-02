@@ -116,7 +116,7 @@ exports.execute = function (req, res) {
            }) 
           .then(message => console.log('Response:'+JSON.stringify(message))) 
           .done();
-
+    console.log(message.accountSid);
     //to save in datat entension
     
    /* try {
