@@ -5,7 +5,7 @@ var util = require('util');
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
-const sfclinet = require(Path.join(__dirname, '..', 'utils', 'sfmc-client.js'));
+
 //-----------------------------
 //const SFClient = require('../utils/sfmc-client');//to save data in data extension
 //const { v1: Uuidv1 } = require('uuid');   //for unique id
