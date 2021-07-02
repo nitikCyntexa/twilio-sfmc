@@ -5,7 +5,10 @@ var util = require('util');
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
-
+//-----------------------------
+const SFClient = require('../utils/sfmc-client');//to save data in data extension
+const { v1: Uuidv1 } = require('uuid');   //for unique id
+//----------------------------------------
 exports.logExecuteData = [];
 
 function logData(req) {
@@ -114,7 +117,29 @@ exports.execute = function (req, res) {
           .then(message => console.log('Response:'+JSON.stringify(message))) 
           .done();
 
+    //to save in datat entension
+    
+   /* try {
+    const id = Uuidv1();
 
+    await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+      {
+        keys: {
+          Id: id,
+          SubscriberKey: data.inArguments[0].contactKey,
+        },
+        values: {
+          Event: data.inArguments[0].DropdownOptions,
+          Text: data.inArguments[0].Text,
+        },
+      },
+    ]);
+  } catch (error) {
+    logger.error(error);
+  }
+    */
+    
+    //-----------------------------------------
 
     // FOR TESTING
     logData(req);
