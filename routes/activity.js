@@ -111,7 +111,7 @@ exports.execute = function (req, res) {
              from: '+12523169149',
              to: to
            }) 
-          .then(message => console.log(message.sid)) 
+          .then(message => console.log('Response:'+JSON.stringify(message))) 
           .done();
 
 
