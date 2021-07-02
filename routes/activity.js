@@ -4,7 +4,7 @@ var util = require('util');
 // Deps
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
-
+const JWT1 = require(Path.join(__dirname, '..', 'lib', 'sfmc-client.js'));
 var http = require('https');
 
 //-----------------------------
