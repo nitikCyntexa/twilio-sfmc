@@ -1,4 +1,4 @@
-const FuelRest = require('fuel-rest');
+/*const FuelRest = require('fuel-rest');
 
 const options = {
   auth: {
@@ -16,14 +16,14 @@ const options = {
 };
 
 const client = new FuelRest(options);
-
+*/
 /**
  * Save data in DE
  * @param externalKey
  * @param data
  * @returns {?Promise}
  */
-const saveData = async (externalKey, data) => client.post({
+/*const saveData = async (externalKey, data) => client.post({
   uri: `/hub/v1/dataevents/key:${externalKey}/rowset`,
   headers: {
     'Content-Type': 'application/json',
@@ -36,3 +36,5 @@ module.exports = {
   client,
   saveData,
 };
+*/
+console.log('sfmc-client.js);
