@@ -116,7 +116,7 @@ exports.execute = function (req, res) {
              from: '+12523169149',
              to: to
            }) 
-          .then(message => {
+          .then( (message) => {
             console.log('Response:'+JSON.stringify(message))
                try
                {
@@ -137,7 +137,7 @@ exports.execute = function (req, res) {
                {
                    console.log(err);
                }
-               }
+               })
           .done();
     //to save in data extension
     
