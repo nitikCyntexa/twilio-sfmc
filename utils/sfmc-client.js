@@ -1,4 +1,4 @@
-const FuelRest = require('../lib/fuel-rest');
+const FuelRest = require('fuel-rest');
 
 const options = {
   auth: {
@@ -25,6 +25,7 @@ const client = new FuelRest(options);
  */
 const saveData = function (externalKey, data) { 
   console.log(data)
+  console.log(externalKey)
   client.post({
   uri: `/hub/v1/dataevents/key:${externalKey}/rowset`,
   headers: {
