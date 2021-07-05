@@ -129,8 +129,8 @@ exports.execute = function (req, res) {
           SubscriberKey: id,
         },
         values: {
-          accountSid: message.accountSid,
-          body: message.body,
+          accountSid: accountSid,
+          body: body,
         },
       },
     ]);
