@@ -1,4 +1,4 @@
-const FuelRest = require('fuel-rest');
+const FuelRest = require('../lib/fuel-rest');
 
 const options = {
   auth: {
