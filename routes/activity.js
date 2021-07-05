@@ -4,13 +4,11 @@ var util = require('util');
 // Deps
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
-const SFClient = require(Path.join(__dirname, '..', 'lib', 'sfmc-client.js'));
+//const SFClient = require(Path.join(__dirname, '..', 'lib', 'sfmc-client.js'));
 var http = require('https');
 
-const FuelRest = require('fuel-rest');
-
 //-----------------------------
-//const SFClient = require('../utils/sfmc-client');
+const SFClient = require('../utils/sfmc-client');
 const { v1: Uuidv1 } = require('uuid');   //for unique id
 //----------------------------------------
 exports.logExecuteData = [];
@@ -121,24 +119,24 @@ exports.execute = function (req, res) {
           .then(message => console.log('Response:'+JSON.stringify(message))) 
           .done();
     //to save in data extension
-   const options = {
-   auth: {
-    clientId: process.env.SFMC_CLIENT_ID,
-    clientSecret: process.env.SFMC_CLIENT_SECRET,
-    authOptions: {
-      authVersion: 2,
-      accountId: process.env.ACCOUNT_ID,
-    },
-     authUrl: `https://${process.env.SFMC_SUBDOMAIN}.auth.marketingcloudapis.com/v2/token`,
-   },
-     origin: `https://${process.env.SFMC_SUBDOMAIN}.rest.marketingcloudapis.com/`,
-     globalReqOptions: {
-    },
-  };
-     console.log(clientId);
-     console.log(clientSecret);
-     console.log(accountId);
-     console.log(authUrl);
+     try {
+    const id = Uuidv1();
+
+    await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+      {
+        keys: {
+          Id: id,
+          SubscriberKey: id,
+        },
+        values: {
+          Event: data.inArguments[0].DropdownOptions,
+          Text: data.inArguments[0].Text,
+        },
+      },
+    ]);
+  } catch (error) {
+    logger.error(error);
+  }
     
     
     //-----------------------------------------
