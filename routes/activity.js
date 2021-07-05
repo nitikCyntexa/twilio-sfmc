@@ -8,8 +8,8 @@ const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
 
 //-----------------------------
-//const SFClient = require('../utils/sfmc-client');
-const { v1: Uuidv1 } = require('uuid');   //for unique id
+const SFClient = require('../utils/sfmc-client');
+//const { v1: Uuidv1 } = require('uuid');   //for unique id
 //----------------------------------------
 exports.logExecuteData = [];
 
