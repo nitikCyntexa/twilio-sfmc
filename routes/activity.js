@@ -4,11 +4,11 @@ var util = require('util');
 // Deps
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
-//const SFClient = require(Path.join(__dirname, '..', 'lib', 'sfmc-client.js'));
+const SFClient = require(Path.join(__dirname, '..', 'lib', 'sfmc-client.js'));
 var http = require('https');
 
 //-----------------------------
-const SFClient = require('../utils/sfmc-client');
+//const SFClient = require('../utils/sfmc-client');
 const { v1: Uuidv1 } = require('uuid');   //for unique id
 //----------------------------------------
 exports.logExecuteData = [];
