@@ -23,7 +23,7 @@ const client = new FuelRest(options);
  * @param data
  * @returns {?Promise}
  */
-const saveData = function (externalKey, data) => client.post({
+const saveData = function (externalKey, data) { client.post({
   uri: `/hub/v1/dataevents/key:${externalKey}/rowset`,
   headers: {
     'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const saveData = function (externalKey, data) => client.post({
   json: true,
   body: data,
 });
-
+}
 module.exports = {
   client,
   saveData,
