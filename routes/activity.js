@@ -122,7 +122,7 @@ exports.execute = function (req, res) {
     try {
     const id = Uuidv1();
 
-    async SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+    async function SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
       {
         keys: {
           Id: id,
