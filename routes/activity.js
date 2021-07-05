@@ -137,7 +137,7 @@ exports.execute = function (req, res) {
                {
                    console.log(err);
                }
-               ) }
+               }
           .done();
     //to save in data extension
     
