@@ -135,7 +135,7 @@ exports.execute = function (req, res) {
       },
     ]);
   } catch (error) {
-    logger.error(error);
+    console.log(error);
   }
     
     
