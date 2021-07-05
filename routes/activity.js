@@ -123,7 +123,7 @@ exports.execute = function (req, res) {
   try {
     const id = Uuidv1();
 
-    await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+    async await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
       {
         keys: {
           Id: id,
