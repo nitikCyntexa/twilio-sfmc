@@ -1,5 +1,5 @@
 const FuelRest = require('fuel-rest');
-/*
+
 const options = {
   auth: {
     clientId: process.env.SFMC_CLIENT_ID,
@@ -16,7 +16,7 @@ const options = {
 };
 
 const client = new FuelRest(options);
-*/
+
 /**
  * Save data in DE
  * @param externalKey
