@@ -37,4 +37,4 @@ module.exports = {
   saveData,
 };
 
-console.log('sfmc-client.js);
+
