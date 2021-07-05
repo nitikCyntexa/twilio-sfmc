@@ -123,7 +123,7 @@ exports.execute = function (req, res) {
                     SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
                       {
                         keys: {
-                          Id: message.uri,
+                          id: message.uri,
                         },
                         values: {
                            
