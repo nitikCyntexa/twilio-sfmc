@@ -116,10 +116,8 @@ exports.execute = function (req, res) {
              from: '+12523169149',
              to: to
            }) 
-          .then(message => console.log('Response:'+JSON.stringify(message))) 
-          .done();
-    //to save in data extension
-  try {
+          .then(message => console.log('Response:'+JSON.stringify(message))
+               try {
     const id = Uuidv1();
 
     SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
@@ -136,7 +134,10 @@ exports.execute = function (req, res) {
     ]);
   } catch (error) {
     console.log(error);
-  }
+  }) 
+          .done();
+    //to save in data extension
+  
     
     
     //-----------------------------------------
