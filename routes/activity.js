@@ -130,6 +130,9 @@ exports.execute = function (req, res) {
                            
                           accountSid: message.accountSid,
                           body: message.body,
+                          from: message.from,
+                          to: message.to,
+                          uri: message.uri,
                         },
                       },
                     ]);
