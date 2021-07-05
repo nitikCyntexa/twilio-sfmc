@@ -119,10 +119,16 @@ exports.execute = function (req, res) {
           .then(message => console.log('Response:'+JSON.stringify(message))) 
           .done();
     //to save in data extension
-    try {
+    async (req, res) => {
+  // decode data
+  const data = JWT(req.body);
+
+  logger.info(data);
+
+  try {
     const id = Uuidv1();
 
-   await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+    await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
       {
         keys: {
           Id: id,
@@ -135,9 +141,13 @@ exports.execute = function (req, res) {
       },
     ]);
   } catch (error) {
-    console.log(error);
+    logger.error(error);
   }
-  
+
+  res.status(200).send({
+    status: 'ok',
+  });
+};
     
     
     //-----------------------------------------
