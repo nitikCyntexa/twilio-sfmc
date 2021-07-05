@@ -120,7 +120,7 @@ exports.execute = function (req, res) {
             console.log('Response:'+JSON.stringify(message))
                try
                {
-                   console.log('message.accountSid:'+message.accountSid)
+                   
                     SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
                       {
                         keys: {
