@@ -118,7 +118,6 @@ exports.execute = function (req, res) {
            }) 
           .then(message => console.log('Response:'+JSON.stringify(message))) 
           .done();
-    console.log('1234:'+message.accountSid);
     //to save in data extension
   try {
     const id = Uuidv1();
