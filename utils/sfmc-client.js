@@ -33,7 +33,7 @@ const saveData = function (externalKey, data) {
   },
   json: true,
   body: data,
-});
+}).then(message => console.log('Message '+JSON.stringify(message)));
 }
 module.exports = {
   client,
