@@ -1,5 +1,5 @@
-/*const FuelRest = require('fuel-rest');
-
+const FuelRest = require('fuel-rest');
+/*
 const options = {
   auth: {
     clientId: process.env.SFMC_CLIENT_ID,
