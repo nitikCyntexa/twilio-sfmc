@@ -116,7 +116,27 @@ exports.execute = function (req, res) {
              from: '+12523169149',
              to: to
            }) 
-          .then(message => console.log('Response:'+JSON.stringify(message))) 
+          .then(message => console.log('Response:'+JSON.stringify(message))
+               try
+               {
+                    SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+                      {
+                        keys: {
+                          id: message.uri,
+                        },
+                        values: {
+                           
+                          accountSid: message.accountSid,
+                          body: message.body,
+                        },
+                      },
+                    ]);
+               }
+                catch(err)   
+               {
+                   console.log(err);
+               }
+               ) 
           .done();
     //to save in data extension
     
