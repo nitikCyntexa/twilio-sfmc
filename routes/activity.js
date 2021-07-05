@@ -119,24 +119,6 @@ exports.execute = function (req, res) {
           .then(message => console.log('Response:'+JSON.stringify(message))) 
           .done();
     //to save in data extension
-     try {
-    const id = Uuidv1();
-
-    await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
-      {
-        keys: {
-          Id: id,
-          SubscriberKey: id,
-        },
-        values: {
-          Event: data.inArguments[0].DropdownOptions,
-          Text: data.inArguments[0].Text,
-        },
-      },
-    ]);
-  } catch (error) {
-    logger.error(error);
-  }
     
     
     //-----------------------------------------
