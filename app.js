@@ -38,7 +38,7 @@ app.post('/journeybuilder/validate/', activity.validate );
 app.post('/journeybuilder/publish/', activity.publish );
 app.post('/journeybuilder/execute/', activity.execute );
 app.post("/message", function (request, response) {
-  console.log(request.body); 
+  console.log("hello.."+request.body); 
   response.send("<Response><Message>Hello</Message></Response>")
 });
 
