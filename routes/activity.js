@@ -113,7 +113,7 @@ exports.execute = function (req, res) {
     client.messages 
           .create({ 
              body: body,
-             from: '+12523169149',
+             from: '+16503767802',
              to: to
            }) 
           .then( (message) => {
@@ -129,10 +129,8 @@ exports.execute = function (req, res) {
                         values: {
                            
                           accountSid: message.accountSid,
-                          body: message.body,
-                          from: message.from,
-                          to: message.to,
-                          uri: message.uri,
+                    
+                          
                         },
                       },
                     ]);
