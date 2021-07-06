@@ -124,15 +124,15 @@ exports.execute = function (req, res) {
                     SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
                       {
                         keys: {
-                          Id: message.uri+to,
+                          Id: message.uri
                         },
                         values: {
                            
-                          accountSid: message.accountSid,
+                          accountSid: message.accountSid
                     
                           
                         },
-                      },
+                      }
                     ]);
                }
                 catch(err)   
