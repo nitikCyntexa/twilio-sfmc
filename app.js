@@ -37,9 +37,11 @@ app.post('/journeybuilder/save/', activity.save );
 app.post('/journeybuilder/validate/', activity.validate );
 app.post('/journeybuilder/publish/', activity.publish );
 app.post('/journeybuilder/execute/', activity.execute );
-app.post("/message", function (request, response) {
-  console.log("hello.."+request.body); 
-  response.send("<Response><Message>Hello</Message></Response>")
+
+app.post('/message',function(req,res){
+  console.log("hellooooooo");
+  console.log(req);
+  //console.log("Reply Body:"+req.body);
 });
 
 http.createServer(app).listen(app.get('port'), function(){
