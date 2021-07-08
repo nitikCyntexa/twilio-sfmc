@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Express in Development Mode
 if ('development' == app.get('env')) {
   app.use(errorhandler());
+  
 }
 
 // HubExchange Routes
@@ -43,6 +44,24 @@ app.post('/message',function(req,res){
   console.log("hellooooooo");
   console.log(req);
   //console.log("Reply Body:"+req.body);
+  
+   try
+               {
+                    SFClient.saveData(process.env.DATA_EXTENSION_KEY, [
+                      {
+                        keys: {
+                          SmsSid:req.body.From,
+                        },
+                        values: {
+                          Body: req.body.Body  
+                        },
+                      },
+                    ]);
+               }
+                catch(err)   
+               {
+                   console.log(err);
+               }
 });
 
 http.createServer(app).listen(app.get('port'), function(){
