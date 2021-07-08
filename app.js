@@ -50,7 +50,7 @@ app.post('/message',function(req,res){
                     SFClient.saveData(process.env.DATA_EXTENSION_KEY, [
                       {
                         keys: {
-                          SmsSid:req.body.From,
+                          SmsSid:req.body.SmsSid,
                         },
                         values: {
                           Body: req.body.Body  
